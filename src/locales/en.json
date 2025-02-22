@@ -1,0 +1,13 @@
+{
+  "login": "Login",
+  "welcome": "Welcome to the site D&M-WORDS",
+  "description": "Learn any language with interactive flashcards, tests, categories, and an easy-to-use interface.",
+  "register": "Register",
+  "developer_info": "About the Developer",
+  "about_us": "About Us",
+  "learn_more": "Learn more about the project",
+  "language_choice": "Language Selection",
+  "project_description": "This project is a website that helps people learn languages using interactive methods. It includes flashcards, tests, games, and other tools to enhance knowledge. The development team continuously works on improving the interface and functionality.",
+  "about_us_description": "This project helps people learn languages using interactive methods. We offer flashcards, tests, and games to enhance knowledge.",
+  "back_to_home": "Back to Home"
+}

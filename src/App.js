@@ -1,19 +1,22 @@
-import React from "react";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import AuthPage from './pages/AuthPage';
+import LandingPage from './pages/LandingPage';
+import AboutUsPage from './pages/AboutUsPage';
 
-function App() {
-  return (
-      <div style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-        fontSize: "24px",
-        fontWeight: "bold"
-      }}>
-          Добро пожаловать! Этот сайт поможет вам изучать английский легко и интересно!
-
-      </div>
-  );
+function Main() {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/home" element={<HomePage />} />
+                <Route path="/login" element={<AuthPage />} />
+                <Route path="/register" element={<AuthPage />} />
+                <Route path="/about-us" element={<AboutUsPage />} /> {/* Добавлен роут для "О нас" */}
+            </Routes>
+        </Router>
+    );
 }
 
-export default App;
+export default Main;

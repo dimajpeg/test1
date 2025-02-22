@@ -1,9 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
+import ReactDOM from "react-dom/client"; // Импортируем только из этого модуля
+import Main from "./App";
+import './index.css';
+import './i18n'; // Подключаем i18n
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
     <React.StrictMode>
-        <App />
+        <Main />
     </React.StrictMode>
 );
