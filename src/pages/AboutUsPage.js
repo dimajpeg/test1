@@ -9,13 +9,14 @@ const AboutUsPage = () => {
     return (
         <div className="min-h-screen flex flex-col justify-between bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400">
             {/* Header */}
-            <header className="w-full flex items-center justify-between p-6 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 shadow-lg">
+            <header
+                className="w-full flex items-center justify-between p-6 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 shadow-lg">
                 <img
-                    src="/photo/logo0.png"
+                    src={`${process.env.PUBLIC_URL}/photo/logo0.png`}
                     alt="Лого"
                     className="h-16 w-auto"
                 />
-                <LanguageSelector />
+
             </header>
 
             {/* Основной контент */}

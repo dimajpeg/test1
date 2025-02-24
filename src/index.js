@@ -5,8 +5,6 @@ import './index.css';
 import './i18n'; // Подключаем i18n
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-    <React.StrictMode>
-        <Main />
-    </React.StrictMode>
-);
+root.render(<Main />);
+
+

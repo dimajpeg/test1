@@ -9,10 +9,12 @@ const LanguageSelector = () => {
     const toggleDropdown = () => setIsOpen(!isOpen);
 
     const handleLanguageChange = (language) => {
-        i18n.changeLanguage(language);  // Меняем язык через i18next
-        setSelectedLanguage(language);  // Обновляем выбранный язык
-        setIsOpen(false);  // Закрываем выпадающий список после выбора языка
+        i18n.changeLanguage(language);
+        setSelectedLanguage(language);
+        localStorage.setItem('lang', language);  // Сохраняем выбор языка
+        setIsOpen(false);
     };
+
 
     return (
         <div className="relative">
