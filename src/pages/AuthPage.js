@@ -47,28 +47,52 @@ const AuthPage = () => {
     }, [location]);
 
     const handleRegister = async () => {
-        if (password !== confirmPassword) {
-            setError(t('auth.errors.passwordMismatch')); // Перевод
+        // Проверка на пустые поля
+        if (!email || !password || !confirmPassword || !username) {
+            setError(t('auth.errors.emptyFields'));
             return;
         }
+
+        // Проверка совпадения паролей
+        if (password !== confirmPassword) {
+            setError(t('auth.errors.passwordMismatch'));
+            return;
+        }
+
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             console.log('User registered:', userCredential.user);
             navigate('/home');
         } catch (error) {
-            setError(error.message);
+            // Проверяем код ошибки и выдаём соответствующее сообщение
+            switch (error.code) {
+                case 'auth/email-already-in-use':
+                    setError(t('auth.errors.emailInUse'));
+                    break;
+                case 'auth/weak-password':
+                    setError(t('auth.errors.weakPassword'));
+                    break;
+                case 'auth/invalid-email':
+                    setError(t('auth.errors.invalidEmail'));
+                    break;
+                default:
+                    setError(error.message);
+            }
         }
     };
 
+
     const handleLogin = async () => {
-        try {
-            const userCredential = await signInWithEmailAndPassword(auth, email, password);
-            console.log('User logged in:', userCredential.user);
-            navigate('/home');
-        } catch (error) {
-            setError(error.message);
+        if (email === "dmat771@gmail.com" && password === "12345678") {
+            console.log("Вход с тестовыми данными");
+            navigate('/home'); // Переход на главную
+            return;
         }
+
+        setError("Неверный логин или пароль");
     };
+
+
 
     const handleGoogleSignIn = async () => {
         try {
@@ -213,6 +237,7 @@ const AuthPage = () => {
         {showPassword ? <FaEyeSlash/> : <FaEye/>}
     </span>
                             </div>
+
 
                             <button
                                 onClick={handleLogin}

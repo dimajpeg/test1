@@ -8,21 +8,22 @@ const LandingPage = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-between bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400">
-            <header className="w-full flex items-center justify-between p-6 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 shadow-lg">
+        <div
+            className="min-h-screen flex flex-col items-center justify-between bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400">
+            <header
+                className="w-full flex items-center justify-between p-6 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 shadow-lg">
+
                 <img
                     src={`${process.env.PUBLIC_URL}/photo/logo0.png`}
                     alt="Лого"
                     className="h-16 w-auto"
                 />
-
-                <button
-                    onClick={() => navigate("/auth?type=login")}
-                    className="text-gray-700 hover:text-gray-900 text-lg font-semibold"
-                >
+                <button onClick={() => navigate("/auth?type=login")}
+                        className="text-gray-700 hover:text-gray-900 text-lg font-semibold">
                     {t('login')}
                 </button>
             </header>
+
 
             <main className="flex flex-col items-center text-center p-10 space-y-8">
                 <h1 className="text-5xl font-extrabold text-gray-800 mb-4">{t('welcome')}</h1>
@@ -66,13 +67,14 @@ const LandingPage = () => {
                         </div>
                         <div className="footer-category flex flex-col items-start">
                             <h4 className="text-2xl font-semibold text-gray-800 mb-4">{t('about_us')}</h4>
-                            <button onClick={() => navigate("/about-us")} className="text-gray-800 hover:text-gray-900 text-lg">
+                            <button onClick={() => navigate("/about-us")}
+                                    className="text-gray-800 hover:text-gray-900 text-lg">
                                 {t('learn_more')}
                             </button>
                         </div>
                         <div className="footer-category flex flex-col items-start mt-6 sm:mt-0">
                             <h4 className="text-2xl font-semibold text-gray-800 mb-4">{t('language_choice')}</h4>
-                            <LanguageSelector />
+                            <LanguageSelector/>
                         </div>
                     </div>
                 </div>

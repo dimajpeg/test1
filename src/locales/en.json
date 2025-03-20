@@ -10,8 +10,10 @@
   "project_description": "This project is a website that helps people learn languages using interactive methods. It includes flashcards, tests, games, and other tools to enhance knowledge. The development team continuously works on improving the interface and functionality.",
   "about_us_description": "This project helps people learn languages using interactive methods. We offer flashcards, tests, and games to enhance knowledge.",
   "back_to_home": "Back to Home",
-
-
+  "home": "Home",
+  "your_blocks": "Your Blocks",
+  "search": "Search",
+  "back_to_previous": "Go back",
   "auth": {
     "login": "Login",
     "register": "Register",
@@ -26,7 +28,14 @@
     "loginWithGoogle": "Sign in with Google",
     "orWithEmail": " or with email ",
     "signIn": "Sign In",
-    "signUp": "Sign Up"
+    "signUp": "Sign Up",
+    "errors": {
+      "emptyFields": "All fields must be filled",
+      "passwordMismatch": "Passwords do not match",
+      "invalidEmail": "Invalid email address",
+      "weakPassword": "Password is too weak",
+      "emailInUse": "This email is already in use"
+    }
   }
 }
 
